@@ -1,9 +1,16 @@
 = verbose_factory_girl
 
-Description goes here.
+Print out what factory girl is doing to the console in a format that is right at
+home with Rails migrations. For some background read
+http://pupeno.com/blog/generating-sample-data
+
+It is used just like factory_girl, but instead of calling Factory, you call
+VFactory, like:
+
+    VFactory.create :user
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a

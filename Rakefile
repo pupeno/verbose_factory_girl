@@ -1,16 +1,17 @@
-require 'rubygems'
-require 'rake'
+require "rubygems"
+require "rake"
 
 begin
-  require 'jeweler'
+  require "jeweler"
   Jeweler::Tasks.new do |gem|
     gem.name = "verbose_factory_girl"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Like factory girl but much more noisy}
+    gem.description = %Q{Print out what factory girl is doing to the console in a format that is right at home with Rails migrations. For some background read http://pupeno.com/blog/generating-sample-data}
     gem.email = "pupeno@pupeno.com"
     gem.homepage = "http://github.com/pupeno/verbose_factory_girl"
     gem.authors = ["J. Pablo Fernández"]
     gem.add_development_dependency "yard", ">= 0"
+    gem.add_dependency "factory_girl", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -18,18 +19,18 @@ rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
 
-require 'rake/testtask'
+require "rake/testtask"
 Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
+  test.libs << "lib" << "test"
+  test.pattern = "test/**/test_*.rb"
   test.verbose = true
 end
 
 begin
-  require 'rcov/rcovtask'
+  require "rcov/rcovtask"
   Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/test_*.rb'
+    test.libs << "test"
+    test.pattern = "test/**/test_*.rb"
     test.verbose = true
   end
 rescue LoadError
@@ -41,11 +42,11 @@ end
 task :test => :check_dependencies
 
 begin
-  require 'reek/adapters/rake_task'
+  require "reek/adapters/rake_task"
   Reek::RakeTask.new do |t|
     t.fail_on_error = true
     t.verbose = false
-    t.source_files = 'lib/**/*.rb'
+    t.source_files = "lib/**/*.rb"
   end
 rescue LoadError
   task :reek do
@@ -54,8 +55,8 @@ rescue LoadError
 end
 
 begin
-  require 'roodi'
-  require 'roodi_task'
+  require "roodi"
+  require "roodi_task"
   RoodiTask.new do |t|
     t.verbose = false
   end
@@ -68,7 +69,7 @@ end
 task :default => :test
 
 begin
-  require 'yard'
+  require "yard"
   YARD::Rake::YardocTask.new
 rescue LoadError
   task :yardoc do
