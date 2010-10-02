@@ -1,4 +1,6 @@
-require 'helper'
+# Copyright © 2010, José Pablo Fernández
+
+require "helper"
 
 class TestVerboseFactoryGirl < Test::Unit::TestCase
   def test_something_for_real
