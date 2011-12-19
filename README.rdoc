@@ -4,10 +4,10 @@ Print out what factory girl is doing to the console in a format that is right at
 home with Rails migrations. For some background read
 http://pupeno.com/blog/generating-sample-data
 
-It is used just like factory_girl, but instead of calling Factory, you call
-VFactory, like:
+It is used just like factory_girl, but instead of calling FactoryGirl, you call
+VFactoryGirl, like:
 
-    VFactory.create :user
+    VFactoryGirl.create :user
 
 == Note on Patches/Pull Requests
 
